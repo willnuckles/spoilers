@@ -1,0 +1,41 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+
+<head>
+    <title>Spoiler Title</title>
+    <style>
+        body {
+            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+            font-size: 100%;
+        }
+        
+        .search-found {
+            text-decoration: underline;
+        }
+    </style>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="jquery-3.0.0.min.js"></script>
+    <script src="spoiler.js"></script>
+</head>
+
+<body>
+    <div id="form">
+        <label>Input</label>
+        <input type="text" id="block-item">
+        <input id="submit-button" type="submit" value="submit">
+    </div>
+    <div id="listView"></div>
+    <input id="clear-button" type="submit" value="clear">
+</body>
+
+</html>
